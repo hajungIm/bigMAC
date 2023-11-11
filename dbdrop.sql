@@ -1,3 +1,4 @@
+-- drop(소민)
 DROP TABLE restaurant_member_likes;
 DROP TABLE restaurant_hashtag;
 DROP TABLE menu_list;
