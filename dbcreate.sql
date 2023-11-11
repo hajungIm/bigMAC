@@ -1,12 +1,11 @@
--- 데이터베이스 생성
+-- 데이터베이스 생성(소민)
 CREATE DATABASE team04;
 CREATE USER 'team04'@'localhost' IDENTIFIED BY 'team04';
 GRANT ALL PRIVILEGES ON *.* TO 'team04'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-
 USE team04;
 
--- 테이블 생성
+-- 테이블 생성(소민)
 CREATE TABLE restaurant_open_days (
     open_days_id BIGINT PRIMARY KEY,
     monday INT,
