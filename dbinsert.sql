@@ -1,3 +1,4 @@
+-- insert(소민)
 INSERT INTO restaurant (restaurant_id, restaurant_name, city, borough, avenue, cuisine, open_days_id)
 VALUES
 (1, 'The Pizza Press', 'New York', 'Manhattan', 'Madison', 'American', 1),
