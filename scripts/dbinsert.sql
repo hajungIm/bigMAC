@@ -115,7 +115,7 @@ INSERT INTO member (member_id, login_id, member_name, password, gender, age) VAL
 	('29', 'superstar8', 'Roman', 'g@fgds1!@', 'male', '36'),
 	('30', 'sunflower8', 'Bell', 'wngarin!@~', 'male', '16');
 
-INSERT INTO review (review_id, member_id, restaurant_id, rating, content) VALUES
+INSERT INTO review (review_id, member_id, restaurant_id, rating, comment) VALUES
 	('1', '3', '5', '1', ''),
 	('2', '9', '6', '1', ''),
 	('3', '2', '9', '1', 'Hostile staff, okeish food, not so great ambiance. Not sure how the rating on zomato stands at 4.1'),
