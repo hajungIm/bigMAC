@@ -244,7 +244,7 @@ if (!isset($_SESSION['memberId'])) {
       event.preventDefault();
 
       var formData = new FormData(this);
-      fetch('addReview.php', { // 여기에 form이 전송될 URL 입력
+      fetch('addReview.php', { // 서버 php
         method: 'POST',
         body: formData
       })
