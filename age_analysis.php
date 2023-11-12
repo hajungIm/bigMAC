@@ -381,7 +381,7 @@
 
   <script>
   // PHP 스크립트에서 JSON 데이터를 가져옴
-  fetch('tempData_age.php')
+  fetch('get_age_analysis.php')
   .then(response => response.json())
   .then(data => {
     // 'teen' 데이터를 처리합니다.

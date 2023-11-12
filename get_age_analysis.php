@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = mysqli_connect("localhost", "team04", "team04", "team04");
+$mysqli = mysqli_connect("localhost", "root", "", "team04");
 
 if (mysqli_connect_errno()) {
   printf("Connect failed: %s\n", mysqli_connect_error());
@@ -24,7 +24,7 @@ $sql = "WITH RankedRestaurants AS (
     FROM
     restaurant_member_likes rml
     JOIN
-    member m ON rml.member_id = m.member_id
+    member m ON rml.liked_member_id = m.member_id  -- 여기를 수정했습니다
     GROUP BY
     rml.restaurant_id, AgeGroup
   ),
@@ -75,5 +75,5 @@ $sql = "WITH RankedRestaurants AS (
   // PHP 배열을 JSON으로 인코딩하고 출력
   header('Content-Type: application/json');
   echo json_encode($result);
-
+  exit;
   ?>
