@@ -79,3 +79,7 @@ CREATE TABLE menu_list (
     FOREIGN KEY (restaurant_id) REFERENCES restaurant(restaurant_id),
     FOREIGN KEY (menu_id) REFERENCES menu(menu_id)
 );
+
+-- INDEX(소민)
+CREATE INDEX idx_price ON menu (price);
+CREATE INDEX idx_hashtag_name ON hashtag (hashtag_name);
