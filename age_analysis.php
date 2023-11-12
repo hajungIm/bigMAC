@@ -243,8 +243,7 @@
                       <tr>
                         <th scope="col">Restaurant Name</th>
                         <th scope="col">Like Count</th>
-                        <th scope="col">min</th>
-                        <th scope="col">max</th>
+                        <th scope="col">Price Range</th>
                       </tr>
                     </thead>
                     <tbody>
