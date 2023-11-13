@@ -163,13 +163,23 @@ if (!isset($_SESSION['memberId'])) {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Rating(1-5)</h5>
-              <select id="rating" name="rating" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+              <div id="rating">
+                <label style="margin-right: 45px; margin-left: 5px;">
+                  <input type="radio" name="rating" value="1"> 1
+                </label>
+                <label style="margin-right: 45px;">
+                  <input type="radio" name="rating" value="2"> 2
+                </label>
+                <label style="margin-right: 45px;">
+                  <input type="radio" name="rating" value="3"> 3
+                </label>
+                <label style="margin-right: 45px;">
+                  <input type="radio" name="rating" value="4"> 4
+                </label>
+                <label style="margin-right: 45px;">
+                  <input type="radio" name="rating" value="5"> 5
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -223,7 +233,7 @@ if (!isset($_SESSION['memberId'])) {
   <script src="assets/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <script>
+  <script> // restaurant dropdown menu
     $(document).ready(function(){
       $.ajax({
         url: 'addReview.php', 
@@ -239,7 +249,7 @@ if (!isset($_SESSION['memberId'])) {
     })
   });
   </script>
-  <script>
+  <script> // alert
     document.getElementById('reviewForm').addEventListener('submit', function(event) {
       event.preventDefault();
 
