@@ -44,7 +44,9 @@
         $conn->close();
     }
   } else { // 리뷰 등록 화면 출력을 위한 레스토랑 드롭다운 메뉴 생성
-      $sql = "SELECT restaurant_id, restaurant_name FROM restaurant";
+      $sql = "SELECT restaurant_id, restaurant_name 
+              FROM restaurant 
+              ORDER BY restaurant_name";
       $result = $conn->query($sql);
       $restaurants = array();
 
