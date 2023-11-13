@@ -156,10 +156,10 @@ if (!isset($_SESSION['memberId'])) {
 
     <section class="section">
       <div class="row">
-        <div class="col-lg-6"> <!-- 화면 반 나누기 -->
+        <div class="col-lg-6"> 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Results <span>| </span></h5>
+              <h5 class="card-title">Results <span>| Average Price and Rating of Restaurants by Atmosphere</span></h5>
               <div class="col-lg-12">
                 <div id="tables-container"></div>
               </div>
