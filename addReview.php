@@ -19,29 +19,36 @@
       // 입력값
       $rating = $_POST['rating'];
       $comment = $_POST['comment'];
-      $restaurant_id = $_POST['restaurant']; // 'restaurant_id'를 'restaurant'으로 변경
+      $restaurant_id = $_POST['restaurant']; 
 
       //새션에 저장된 정보
       $member_id = $_SESSION['memberId'];
 
+      // insert review
       $stmt = $conn->prepare("INSERT INTO review (member_id, restaurant_id, rating, comment) VALUES (?, ?, ?, ?)");
-      $stmt->bind_param("iiis", $member_id, $restaurant_id, $rating, $comment); //dynamic query 맞는지 확인
-
-      if ($stmt->execute()) {
-        echo "New record created successfully";
-        // 변경 사항 발생 시 commit
-        $conn->commit();
-      } else {
-        echo "Error: " . $stmt->error;
+      $stmt->bind_param("iiis", $member_id, $restaurant_id, $rating, $comment); 
+      if (!$stmt->execute()) {
+        throw new Exception("Error: " . $stmt->error);
       }
-
       $stmt->close();
+
+      // review_count+1
+      $stmt = $conn->prepare("UPDATE restaurant SET review_count = review_count + 1 WHERE restaurant_id = ?");
+      $stmt->bind_param("i", $restaurant_id);
+      if (!$stmt->execute()) {
+        throw new Exception("Error: " . $stmt->error);
+      }
+      $stmt->close();
+
+      // 모든 쿼리 성공 시 commit
+      $conn->commit();
+      echo "New record created successfully";
     } catch (Exception $e) {
-        // 오류 발생 시 rollback
-        $conn->rollback();
-        echo $e->getMessage();
-      } finally {
-        $conn->close();
+      // 둘 중 하나라도 실패 시 rollback
+      $conn->rollback();
+      echo $e->getMessage();
+    } finally {
+      $conn->close();
     }
   } else { // 리뷰 등록 화면 출력을 위한 레스토랑 드롭다운 메뉴 생성
       $sql = "SELECT restaurant_id, restaurant_name 
@@ -57,7 +64,6 @@
       }
       echo json_encode($restaurants);
   }
-
   $conn->close();
 ?>
 

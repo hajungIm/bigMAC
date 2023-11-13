@@ -194,9 +194,7 @@ if (!isset($_SESSION['memberId'])) {
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <form action="addReview.php" method="post">
-              <input type="submit" value="submit" class="btn btn-primary">
-            </form>
+            <input type="submit" value="submit" class="btn btn-primary">
           </div>
         </div>
       </form>
