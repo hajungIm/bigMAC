@@ -59,7 +59,8 @@ if (!isset($_SESSION['memberId'])) {
     width: 100%;
     text-align: center;
     font-weight: 530;
-    color: #444444: 
+    color: #444444;
+    white-space: nowrap;
   }
 
   .avenue {
@@ -68,7 +69,7 @@ if (!isset($_SESSION['memberId'])) {
     width: 100%;
     text-align: center;
     font-weight: 530;
-    color: #444444: 
+    color: #444444;
   }
   </style>
 
@@ -268,7 +269,7 @@ if (!isset($_SESSION['memberId'])) {
       success: function(data) {
         data.forEach(function(item, index) {
           var graphId = 'graph' + (index + 1);
-          var barHeight = (item.restaurant_count / 10) * 100;
+          var barHeight = (item.restaurant_count / 13) * 100;
           var graphHtml = '<div class="graph-container" id="' + graphId + '"><div class="graph"><div class="bar" style="height: ' + barHeight + '%;"></div><div class="count">' + item.restaurant_count + '</div></div><div class="avenue">' + item.avenue + '</div></div>';
           $('#container').append(graphHtml);
         });
