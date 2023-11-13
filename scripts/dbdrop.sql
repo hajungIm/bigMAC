@@ -10,7 +10,3 @@ DROP TABLE menu;
 DROP TABLE restaurant;
 DROP TABLE restaurant_open_days;
 DROP TABLE hashtag;
-
-DROP USER 'team04'@'localhost';
-
-DROP DATABASE team04;
