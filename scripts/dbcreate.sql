@@ -1,8 +1,5 @@
 -- 데이터베이스 생성(소민)
 CREATE DATABASE team04;
-CREATE USER 'team04'@'localhost' IDENTIFIED BY 'team04';
-GRANT ALL PRIVILEGES ON *.* TO 'team04'@'localhost' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
 USE team04;
 
 -- 테이블 생성(소민)
@@ -25,6 +22,7 @@ CREATE TABLE restaurant (
     borough VARCHAR(20),
     avenue VARCHAR(20),
     open_days_id BIGINT,
+    review_count BIGINT,
     FOREIGN KEY (open_days_id) REFERENCES restaurant_open_days(open_days_id)
 );
 
