@@ -15,7 +15,7 @@ if (!isset($_SESSION['memberId'])) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tables / Data - NiceAdmin Bootstrap Template</title>
+  <title>Ambiance Centric Analysis</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
