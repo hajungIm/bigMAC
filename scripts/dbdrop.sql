@@ -10,5 +10,3 @@ DROP TABLE menu;
 DROP TABLE restaurant;
 DROP TABLE restaurant_open_days;
 DROP TABLE hashtag;
-=======
-DROP TABLE hashtag;
