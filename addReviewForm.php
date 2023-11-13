@@ -164,19 +164,19 @@ if (!isset($_SESSION['memberId'])) {
             <div class="card-body">
               <h5 class="card-title">Rating(1-5)</h5>
               <div id="rating">
-                <label style="margin-right: 45px; margin-left: 5px;">
+                <label style="margin-right: 30px; margin-left: 5px;">
                   <input type="radio" name="rating" value="1"> 1
                 </label>
-                <label style="margin-right: 45px;">
+                <label style="margin-right: 30px;">
                   <input type="radio" name="rating" value="2"> 2
                 </label>
-                <label style="margin-right: 45px;">
+                <label style="margin-right: 30px;">
                   <input type="radio" name="rating" value="3"> 3
                 </label>
-                <label style="margin-right: 45px;">
+                <label style="margin-right: 30px;">
                   <input type="radio" name="rating" value="4"> 4
                 </label>
-                <label style="margin-right: 45px;">
+                <label style="margin-right: 30px;">
                   <input type="radio" name="rating" value="5"> 5
                 </label>
               </div>
