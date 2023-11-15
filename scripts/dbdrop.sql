@@ -1,4 +1,3 @@
--- drop(소민)
 use team04;
 
 DROP TABLE restaurant_member_likes;
