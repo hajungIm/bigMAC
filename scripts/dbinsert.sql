@@ -1,4 +1,3 @@
--- insert (소민)
 INSERT INTO restaurant_open_days (open_days_id, monday, tuesday, wednesday, thursday, friday, saturday, sunday) VALUES
 	('1', '1', '1', '1', '1', '1', '1', '1'),
 	('2', '1', '1', '0', '0', '0', '1', '0'),
