@@ -183,11 +183,12 @@ if (!isset($_SESSION['memberId'])) {
                     <thead>
                       <tr>
                       <th scope="col"></th>
-                        <th scope="col">Restaurant Name</th>
+                        <th scope="col">Restaurant</th>
                         <th scope="col">Location</th>
                         <th scope="col">Cuisine</th>
                         <th scope="col">Closed</th>                        
                         <th scope="col">Review Count</th>
+                        <th scope="col">Avg Rating</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -198,6 +199,7 @@ if (!isset($_SESSION['memberId'])) {
                         <td id="Cuisine"></td>
                         <th id="closed_days"></th>
                         <td id="review_count"></td>
+                        <td id="avg_rating"></td>
                       </tr>
                     </tbody>
                   </table>
@@ -263,7 +265,9 @@ if (!isset($_SESSION['memberId'])) {
         <td>${restaurant.location}</td>
         <td>${restaurant.cuisine}</td>
         <td>${restaurant.closed_days}</td>
-        <td>${restaurant.review_count}</td>`;
+        <td>${restaurant.review_count}</td>
+        <td>${restaurant.avg_rating}</td>
+        `;
       tbody.appendChild(tr);
     });
   }
