@@ -1,8 +1,6 @@
--- 데이터베이스 생성(소민)
 CREATE DATABASE team04;
 USE team04;
 
--- 테이블 생성(소민)
 CREATE TABLE restaurant_open_days (
     open_days_id BIGINT PRIMARY KEY,
     monday INT,
@@ -78,6 +76,5 @@ CREATE TABLE menu_list (
     FOREIGN KEY (menu_id) REFERENCES menu(menu_id)
 );
 
--- INDEX(소민)
 CREATE INDEX idx_price ON menu (price);
 CREATE INDEX idx_hashtag_name ON hashtag (hashtag_name);
