@@ -107,17 +107,17 @@ if (!isset($_SESSION['memberId'])) {
         </a>
         <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="analysis-age.php">
+            <a href="age-analysis.php">
               <i class="bi bi-circle"></i><span>Age-Centric</span>
             </a>
           </li>
           <li>
-            <a href="analysis-locale.php">
+            <a href="locale-analysis.php">
               <i class="bi bi-circle"></i><span>Locale-Centric</span>
             </a>
           </li>
           <li>
-            <a href="analysis-ambiance.php" class="active">
+            <a href="ambiance-analysis.php" class="active">
               <i class="bi bi-circle"></i><span>Ambiance-Centric</span>
             </a>
           </li>
@@ -125,14 +125,14 @@ if (!isset($_SESSION['memberId'])) {
       </li><!-- End Analytics Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="myReview.php">
+        <a class="nav-link collapsed" href="my-review.php">
           <i class="bi bi-card-list"></i>
           <span>My Review</span>
         </a>
       </li><!-- End My Review Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="reviewForm.php">
+        <a class="nav-link collapsed" href="review-form.php">
           <i class="bi bi-journal-text"></i>
           <span>Review Form</span>
         </a>
@@ -212,7 +212,7 @@ if (!isset($_SESSION['memberId'])) {
   <script>
   $(document).ready(function(){
    $.ajax({
-     url: '../api/analysis-ambiance.php',
+     url: '../api/ambiance-analysis.php',
      type: 'post',
      dataType: 'json',
      success: function(data) {

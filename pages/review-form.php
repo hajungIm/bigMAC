@@ -107,17 +107,17 @@ if (!isset($_SESSION['memberId'])) {
         </a>
         <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="analysis-age.php">
+            <a href="age-analysis.php">
               <i class="bi bi-circle"></i><span>Age-Centric</span>
             </a>
           </li>
           <li>
-            <a href="analysis-locale.php">
+            <a href="locale-analysis.php">
               <i class="bi bi-circle"></i><span>Locale-Centric</span>
             </a>
           </li>
           <li>
-            <a href="analysis-ambiance.php">
+            <a href="ambiance-analysis.php">
               <i class="bi bi-circle"></i><span>Ambiance-Centric</span>
             </a>
           </li>
@@ -125,14 +125,14 @@ if (!isset($_SESSION['memberId'])) {
       </li><!-- End Analytics Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="myReview.php">
+        <a class="nav-link collapsed" href="my-review.php">
           <i class="bi bi-card-list"></i>
           <span>My Review</span>
         </a>
       </li><!-- End My Review Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link" href="reviewForm.php">
+        <a class="nav-link" href="review-form.php">
           <i class="bi bi-journal-text"></i>
           <span>Review Form</span>
         </a>
@@ -149,7 +149,7 @@ if (!isset($_SESSION['memberId'])) {
 
     <section class="section">
       <div class="row">
-      <form id="reviewForm" action="addReview.php" method="post">
+      <form id="reviewForm" action="review-form.php" method="post">
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
@@ -233,7 +233,7 @@ if (!isset($_SESSION['memberId'])) {
   <script> // restaurant dropdown menu
     $(document).ready(function(){
       $.ajax({
-        url: '../api/reviewForm.php',
+        url: '../api/review-form.php',
         type: 'GET',
         dataType: 'json',
         success: function(data) {
@@ -251,7 +251,7 @@ if (!isset($_SESSION['memberId'])) {
       event.preventDefault();
 
       var formData = new FormData(this);
-      fetch('../api/reviewForm.php', { // 서버 php
+      fetch('../api/review-form.php', { // 서버 php
         method: 'POST',
         body: formData
       })

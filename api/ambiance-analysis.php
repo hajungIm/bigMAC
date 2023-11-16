@@ -105,14 +105,6 @@ for ($i = 0; $i < count($queries); $i++) {
         );
     }
 }
-
 $conn->close();
-
-// // 더미 데이터 생성
-// $data = array();
-// for ($i = 0; $i < 4; $i++) {
-//   $data[$i] = array("rating" => rand(1, 5));
-// }
 echo json_encode($data);
-  
 ?>
