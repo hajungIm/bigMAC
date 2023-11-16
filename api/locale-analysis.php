@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 $query = "SELECT avenue, COUNT(restaurant_id) AS restaurant_count 
           FROM restaurant 
-          GROUP BY avenue";
+          GROUP BY avenue WITH ROLLUP";
 $result = $conn->query($query);
 
 $data = array();

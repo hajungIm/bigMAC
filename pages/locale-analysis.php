@@ -267,10 +267,12 @@ if (!isset($_SESSION['memberId'])) {
       dataType: 'json',
       success: function(data) {
         data.forEach(function(item, index) {
-          var graphId = 'graph' + (index + 1);
-          var barHeight = (item.restaurant_count / 13) * 100;
-          var graphHtml = '<div class="graph-container" id="' + graphId + '"><div class="graph"><div class="bar" style="height: ' + barHeight + '%;"></div><div class="count">' + item.restaurant_count + '</div></div><div class="avenue">' + item.avenue + '</div></div>';
-          $('#container').append(graphHtml);
+          if (item.avenue !=  null) {
+            var graphId = 'graph' + (index + 1);
+            var barHeight = (item.restaurant_count / 13) * 100;
+            var graphHtml = '<div class="graph-container" id="' + graphId + '"><div class="graph"><div class="bar" style="height: ' + barHeight + '%;"></div><div class="count">' + item.restaurant_count + '</div></div><div class="avenue">' + item.avenue + '</div></div>';
+            $('#container').append(graphHtml);
+          }
         });
       }
     });
