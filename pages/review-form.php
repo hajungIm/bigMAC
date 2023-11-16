@@ -183,7 +183,7 @@ if (!isset($_SESSION['memberId'])) {
           </div>
         </div>
         <div class="col-lg-12">
-          <div class="card">
+          <div class="card" style="margin-bottom: 15px;">
             <div class="card-body">
               <h5 class="card-title">Review</h5>
               <textarea id="comment" name="comment" rows="4" cols="50" class="form-control"></textarea>
@@ -193,7 +193,7 @@ if (!isset($_SESSION['memberId'])) {
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <input type="submit" value="submit" class="btn btn-primary">
+            <input type="submit" value="Submit" class="btn btn-primary" style="font-weight: bold;">
           </div>
         </div>
       </form>
