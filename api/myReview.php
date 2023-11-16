@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $mysqli=mysqli_connect("localhost", "team04", "team04", "team04");
 
@@ -13,7 +14,7 @@ else {
 
     if ($stmt = $mysqli->prepare($sql)) {
 
-        $member_id = '로그인한 회원 id';
+        $member_id = $_SESSION['memberId'];
         $stmt->bind_param("s", $member_id);
 
         $stmt->execute();

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = mysqli_connect("localhost", "root", "", "team04");
+$conn = mysqli_connect("localhost", "team04", "team04", "team04");
 
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
@@ -25,16 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $_SESSION['memberName'] = $user['member_name'];
 
       // Redirect to the age_analysis.php page
-      header('Location: age_analysis.php');
+      header('Location: ../pages/index.php');
       exit();
     } else {
       $_SESSION['login_error'] = 'Incorrect password. Please try again.';
-      header('Location: login_form.php');
+      header('Location: ../pages/login.php');
       exit();
     }
   } else {
     $_SESSION['login_error'] = 'Incorrect username. Please try again.';
-    header('Location: login_form.php');
+    header('Location: ../pages/login.php');
     exit();
   }
 }
