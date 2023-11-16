@@ -4,11 +4,10 @@ session_start();
 // 로그인 상태 확인
 if (!isset($_SESSION['memberId'])) {
     // 로그인되지 않았다면 로그인 페이지로 리디렉션
-    header('Location: login_form.php');
+    header('Location: ../pages/login.php');
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +15,7 @@ if (!isset($_SESSION['memberId'])) {
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Restaurant Analysis</title>
+  <title>Home</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -55,7 +54,7 @@ if (!isset($_SESSION['memberId'])) {
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="../pages/index.php" class="logo d-flex align-items-center">
         <i class="ri-apple-fill" style="vertical-align: middle; font-size: 35px;"></i>
         <span class="d-none d-lg-block">bigMAC</span>
       </a>
@@ -71,12 +70,12 @@ if (!isset($_SESSION['memberId'])) {
             <i class="bi bi-person-fill"></i>
             <span class="d-none d-md-block dropdown-toggle ps-2">
               <?php echo isset($_SESSION['memberName']) ? $_SESSION['memberName'] : 'Guest'; ?>
-            </span>          
+            </span>
           </a>
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="../api/logout.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -96,45 +95,29 @@ if (!isset($_SESSION['memberId'])) {
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link" href="index.php">
           <i class="bi bi-grid"></i>
           <span>Home</span>
         </a>
       </li><!-- End Home Nav -->
 
-      <!-- Login Logout 번갈아 가며 활성화 -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-login.html">
-            <i class="bi bi-box-arrow-in-right"></i>
-            <span>Login</span>
-          </a>
-        </li><!-- End Login Page Nav -->
-
-        <!-- End Logout Page Nav -->
-        <!-- <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-login.html">
-            <i class="bi bi-box-arrow-right"></i>
-            <span>Logout</span>
-          </a>
-        </li> -->
-
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Restaurant Analytics</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Restaurant Analysis</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="analysis-age.php">
               <i class="bi bi-circle"></i><span>Age-Centric</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="analysis-locale.php">
               <i class="bi bi-circle"></i><span>Locale-Centric</span>
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
+            <a href="analysis-ambiance.php">
               <i class="bi bi-circle"></i><span>Ambiance-Centric</span>
             </a>
           </li>
@@ -142,14 +125,14 @@ if (!isset($_SESSION['memberId'])) {
       </li><!-- End Analytics Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="myReview.php">
           <i class="bi bi-card-list"></i>
           <span>My Review</span>
         </a>
       </li><!-- End My Review Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="reviewForm.php">
           <i class="bi bi-journal-text"></i>
           <span>Review Form</span>
         </a>
@@ -162,23 +145,23 @@ if (!isset($_SESSION['memberId'])) {
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>NYC Restaurant List</h1>
+      <h1>Home</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html">NYC Restaurant List</a></li>
           <!-- <li class="breadcrumb-item">Tables</li>
           <li class="breadcrumb-item active">Data</li> -->
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-   
+
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">Restaurant Rankings<span> with a high average rating</span></h5>
+                  <h5 class="card-title">Restaurant Rankings<span> | in Our Service</span></h5>
                   <table id="restaurantTable" class="table" style="text-align: center;">
                     <thead>
                       <tr>
@@ -186,7 +169,7 @@ if (!isset($_SESSION['memberId'])) {
                         <th scope="col">Restaurant</th>
                         <th scope="col">Location</th>
                         <th scope="col">Cuisine</th>
-                        <th scope="col">Closed</th>                        
+                        <th scope="col">Closed</th>
                         <th scope="col">Review Count</th>
                         <th scope="col">Avg Rating</th>
                       </tr>
@@ -245,7 +228,7 @@ if (!isset($_SESSION['memberId'])) {
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-  fetch('getRestaurants.php')
+  fetch('../api/restaurantRank.php')
   .then(response => response.json())
   .then(data => {
     processDataAndPopulateTable(data);

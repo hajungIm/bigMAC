@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = mysqli_connect("localhost", "root", "", "team04");
+$mysqli = mysqli_connect("localhost", "team04", "team04", "team04");
 
 if (mysqli_connect_errno()) {
   printf("Connect failed: %s\n", mysqli_connect_error());

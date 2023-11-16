@@ -4,7 +4,7 @@ session_start();
 // 로그인 상태 확인
 if (!isset($_SESSION['memberId'])) {
     // 로그인되지 않았다면 로그인 페이지로 리디렉션
-    header('Location: login_form.php');
+    header('Location: ../pages/login.php');
     exit();
 }
 ?>
@@ -79,7 +79,7 @@ if (!isset($_SESSION['memberId'])) {
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="../pages/index.php" class="logo d-flex align-items-center">
         <i class="ri-apple-fill" style="vertical-align: middle; font-size: 35px;"></i>
         <span class="d-none d-lg-block">bigMAC</span>
       </a>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['memberId'])) {
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="logout.php">
+              <a class="dropdown-item d-flex align-items-center" href="../api/logout.php">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -120,29 +120,29 @@ if (!isset($_SESSION['memberId'])) {
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="index.php">
           <i class="bi bi-grid"></i>
           <span>Home</span>
         </a>
       </li><!-- End Home Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Restaurant Analytics</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Restaurant Analysis</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="analysis-age.php" class="active">
               <i class="bi bi-circle"></i><span>Age-Centric</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="analysis-locale.php">
               <i class="bi bi-circle"></i><span>Locale-Centric</span>
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
+            <a href="analysis-ambiance.php">
               <i class="bi bi-circle"></i><span>Ambiance-Centric</span>
             </a>
           </li>
@@ -150,14 +150,14 @@ if (!isset($_SESSION['memberId'])) {
       </li><!-- End Analytics Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="myReview.php">
           <i class="bi bi-card-list"></i>
           <span>My Review</span>
         </a>
       </li><!-- End My Review Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="reviewForm.php">
           <i class="bi bi-journal-text"></i>
           <span>Review Form</span>
         </a>
@@ -368,7 +368,7 @@ if (!isset($_SESSION['memberId'])) {
 
   <script>
   // PHP 스크립트에서 JSON 데이터를 가져옴
-  fetch('get_age_analysis.php')
+  fetch('../api/analysis-age.php')
   .then(response => response.json())
   .then(data => {
     // 'teen' 데이터를 처리합니다.

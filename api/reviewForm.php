@@ -19,14 +19,14 @@
       // 입력값
       $rating = $_POST['rating'];
       $comment = $_POST['comment'];
-      $restaurant_id = $_POST['restaurant']; 
+      $restaurant_id = $_POST['restaurant'];
 
       //새션에 저장된 정보
       $member_id = $_SESSION['memberId'];
 
       // insert review
       $stmt = $conn->prepare("INSERT INTO review (member_id, restaurant_id, rating, comment) VALUES (?, ?, ?, ?)");
-      $stmt->bind_param("iiis", $member_id, $restaurant_id, $rating, $comment); 
+      $stmt->bind_param("iiis", $member_id, $restaurant_id, $rating, $comment);
       if (!$stmt->execute()) {
         throw new Exception("Error: " . $stmt->error);
       }
@@ -51,8 +51,8 @@
       $conn->close();
     }
   } else { // 리뷰 등록 화면 출력을 위한 레스토랑 드롭다운 메뉴 생성
-      $sql = "SELECT restaurant_id, restaurant_name 
-              FROM restaurant 
+      $sql = "SELECT restaurant_id, restaurant_name
+              FROM restaurant
               ORDER BY restaurant_name";
       $result = $conn->query($sql);
       $restaurants = array();
@@ -66,4 +66,3 @@
   }
   $conn->close();
 ?>
-
