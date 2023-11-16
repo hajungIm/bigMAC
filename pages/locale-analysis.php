@@ -202,7 +202,7 @@ if (!isset($_SESSION['memberId'])) {
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item">Restaurant Analysis </li>
-          <li class="breadcrumb-item active"> Locale-Centric Analysis</li>
+          <li class="breadcrumb-item active"> Locale-Centric</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

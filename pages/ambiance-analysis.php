@@ -148,7 +148,7 @@ if (!isset($_SESSION['memberId'])) {
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item">Restaurant Analysis </li>
-          <li class="breadcrumb-item active"> Ambiance-Centric Analysis</li>
+          <li class="breadcrumb-item active"> Ambiance-Centric</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -236,7 +236,7 @@ if (!isset($_SESSION['memberId'])) {
        $.each(tableData, function(index, value){
           var row = $('<tr></tr>').appendTo(tbody);
           $('<td></td>').text(value.atmosphere).appendTo(row);
-          $('<td></td>').text(value.avg_Price).appendTo(row);
+          $('<td></td>').text(value.avg_Price + '$').appendTo(row);
           $('<td></td>').text(value.rating).appendTo(row);
       });
 
