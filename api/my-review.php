@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
   exit();
 }
 else {
-    $sql = "SELECT rv.rating, rv.comment, rt.restaurant_name FROM review AS rv
+    $sql = "SELECT rv.review_id, rv.rating, rv.comment, rt.restaurant_name FROM review AS rv
     INNER JOIN restaurant AS rt ON rv.restaurant_id = rt.restaurant_id
     WHERE rv.member_id = ?";
 
@@ -19,11 +19,12 @@ else {
 
         $stmt->execute();
 
-        $stmt->bind_result($rating, $comment, $restaurant_name);
+        $stmt->bind_result($review_id, $rating, $comment, $restaurant_name);
 
         $results = array();
         while ($stmt->fetch()) {
           $results[] = array(
+            'reviewId' => $review_id,
             'starRate' => $rating,
             'comment' => $comment,
             'restaurantName' => $restaurant_name

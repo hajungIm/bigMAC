@@ -33,11 +33,7 @@ if (!isset($_SESSION['memberId'])) {
   }
 
   .table th:nth-child(4) {
-    width: 30%; /* Content 열의 폭 설정 */
-  }
-
-  .table th:nth-child(5) {
-    width: 5%; /* Edit 열의 폭 설정 */
+    width: 35%; /* Content 열의 폭 설정 */
   }
 
   .table th:nth-child(6) {
@@ -199,7 +195,6 @@ if (!isset($_SESSION['memberId'])) {
               <th scope="col">Restaurant Name</th>
               <th scope="col">Rating</th>
               <th scope="col">Comment</th>
-              <th scope="col">Edit</th>
               <th scope="col">Delete</th>
             </tr>
           </thead>
@@ -212,9 +207,6 @@ if (!isset($_SESSION['memberId'])) {
               </td>
               <td id="comment">This is Content ...</td>
               <td>
-                <i class="edit-color-change bi bi-pencil-fill"></i>
-              </td>
-              <td>
                 <i class="delete-color-change bi bi-trash-fill"></i>
               </td>
             </tr>
@@ -226,9 +218,6 @@ if (!isset($_SESSION['memberId'])) {
               </td>
               <td id="comment">This is Content ...</td>
               <td>
-                <i class="edit-color-change bi bi-pencil-fill"></i>
-              </td>
-              <td>
                 <i class="delete-color-change bi bi-trash-fill"></i>
               </td>
             </tr>
@@ -239,9 +228,6 @@ if (!isset($_SESSION['memberId'])) {
                 <span id="starRate"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i class="bi bi-star"></i></span>
               </td>
               <td id="comment">This is Content ...</td>
-              <td>
-                <i class="edit-color-change bi bi-pencil-fill"></i>
-              </td>
               <td>
                 <i class="delete-color-change bi bi-trash-fill"></i>
               </td>
@@ -321,7 +307,7 @@ if (!isset($_SESSION['memberId'])) {
 
         // 네 번째 열: comment
         var commentTd = $('<td>');
-        var summaryText = row.comment.substring(0, 50) + '...'; // 처음 50자만 표시
+        var summaryText = row.comment.substring(0, 40) + '...'; // 처음 50자만 표시
         var fullTextSpan = $('<span>')
             .addClass('text-primary comment-text')
             .css('cursor', 'pointer')
@@ -329,15 +315,13 @@ if (!isset($_SESSION['memberId'])) {
             .attr('data-bs-target', '#basicModal')
             .text(summaryText)
             .on('click', function() {
-                $('#modalBody').text(row.comment); // 모달의 본문을 전체 텍스트로 설정
+              var reviewId = row.reviewId;
+                $('#modalBodyText').text(row.comment); // 모달의 본문을 전체 텍스트로 설정
+                $('#editTextArea').val(row.comment);
+                $('#saveButton').data('reviewId', reviewId);
             });
         commentTd.append(fullTextSpan);
         tr.append(commentTd);
-
-        // 다섯 번째 열: 수정 아이콘
-        var editTd = $('<td>');
-        editTd.html('<i class="edit-color-change bi bi-pencil-fill"></i>');
-        tr.append(editTd);
 
         // 여섯 번째 열: 삭제 아이콘
         var deleteTd = $('<td>');
@@ -361,17 +345,57 @@ if (!isset($_SESSION['memberId'])) {
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Review Comment</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="modalBody">
-          Test comment
+        <div class="modal-body">
+          <p id="modalBodyText">Test comment</p>
+          <textarea id="editTextArea" class="form-control" style="display:none;"></textarea>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="editButton" class="btn btn-primary">Edit</button>
+          <button type="button" id="saveButton" class="btn btn-success" style="display:none;">Save</button>
+          <button type="button" id="closeButton" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div><!-- End Basic Modal-->
+
+  <script>
+  $('#editButton').on('click', function() {
+    var modalText = $('#modalBodyText').text();
+    $('#editTextArea').val(modalText).show();
+    $('#modalBodyText').hide();
+    $('#editButton').hide();
+    $('#saveButton').show();
+  });
+
+  $('#saveButton').on('click', function() {
+    var updatedText = $('#editTextArea').val();
+    var reviewId = $(this).data('reviewId');
+
+    $.ajax({
+      url: '../api/update-review.php',
+      type: 'POST',
+      data: {
+        reviewId: reviewId,
+        comment: updatedText
+      },
+      success: function(response) {
+        console.log('Update successful', response);
+        window.location.href = 'my-review.php';
+      },
+      error: function(xhr, status, error) {
+        console.log('Update failed', xhr,status, error);
+      }
+    })
+  })
+
+  $('#closeButton').on('click', function() {
+    $('#editTextArea').hide();
+    $('#modalBodyText').show();
+    $('#editButton').show();
+    $('#saveButton').hide();
+  });
+  </script>
 </body>
 
 </html>
