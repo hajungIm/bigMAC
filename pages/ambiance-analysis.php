@@ -158,7 +158,7 @@ if (!isset($_SESSION['memberId'])) {
         <div class="col-lg-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Results <span>| Average Price and Rating of Restaurants by Atmosphere</span></h5>
+              <h5 class="card-title">Results <span>| Average Price and Rating of Restaurants by Ambiance</span></h5>
               <div class="col-lg-12">
                 <div id="tables-container"></div>
               </div>
