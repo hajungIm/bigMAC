@@ -327,7 +327,7 @@ if (!isset($_SESSION['memberId'])) {
         var deleteTd = $('<td>');
         var deleteIcon = $('<i class="delete-color-change bi bi-trash-fill"></i>')
         .on('click', function() {
-          if (confirm('Do you really want to DELTE this review?')) {
+          if (confirm('Do you really want to DELETE this review?')) {
             deleteReview(row.reviewId);
           }
         });
