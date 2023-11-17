@@ -325,7 +325,13 @@ if (!isset($_SESSION['memberId'])) {
 
         // 여섯 번째 열: 삭제 아이콘
         var deleteTd = $('<td>');
-        deleteTd.html('<i class="delete-color-change bi bi-trash-fill"></i>');
+        var deleteIcon = $('<i class="delete-color-change bi bi-trash-fill"></i>')
+        .on('click', function() {
+          if (confirm('Do you really want to DELTE this review?')) {
+            deleteReview(row.reviewId);
+          }
+        });
+        deleteTd.append(deleteIcon);
         tr.append(deleteTd);
 
         tableBody.append(tr); // 완성된 행을 테이블에 추가
@@ -395,6 +401,21 @@ if (!isset($_SESSION['memberId'])) {
     $('#editButton').show();
     $('#saveButton').hide();
   });
+
+  function deleteReview(reviewId) {
+    $.ajax({
+      url: '../api/delete-review.php',
+      type: 'POST',
+      data: { reviewId: reviewId },
+      success: function(response) {
+        console.log('Update successful', response);
+        window.location.href = 'my-review.php';
+      },
+      error: function(xhr, status, error) {
+        console.log('Update failed', xhr,status, error);
+      }
+    });
+  }
   </script>
 </body>
 
