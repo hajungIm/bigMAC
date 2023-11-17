@@ -191,7 +191,7 @@ if (!isset($_SESSION['memberId'])) {
               <div class="card top-selling overflow-auto">
 
                 <div class="card-body pb-0">
-                  <h5 class="card-title">Teenagers <span>| ages 13 to 19</span></h5>
+                  <h5 class="card-title">Top 5 Most Liked Restaurants Among Teenagers <span>| ages 13 to 19</span></h5>
 
                   <table id="teen" class="table" style="text-align: center;">
                     <thead>
@@ -224,7 +224,7 @@ if (!isset($_SESSION['memberId'])) {
               <div class="card top-selling overflow-auto">
 
                 <div class="card-body pb-0">
-                  <h5 class="card-title">Young Adults <span>| ages 20 to 39</span></h5>
+                  <h5 class="card-title">Top 5 Most Liked Restaurants Among Young Adults <span>| ages 20 to 39</span></h5>
 
                   <table id="young" class="table" style="text-align: center;">
                     <thead>
@@ -257,7 +257,7 @@ if (!isset($_SESSION['memberId'])) {
               <div class="card top-selling overflow-auto">
 
                 <div class="card-body pb-0">
-                  <h5 class="card-title">Middle Aged <span>| ages 40 to 59</span></h5>
+                  <h5 class="card-title">Top 5 Most Liked Restaurants Among Middle Aged <span>| ages 40 to 59</span></h5>
 
                   <table id="middle" class="table" style="text-align: center;">
                     <thead>

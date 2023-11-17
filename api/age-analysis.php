@@ -24,7 +24,7 @@ $sql = "WITH RankedRestaurants AS (
     FROM
     restaurant_member_likes rml
     JOIN
-    member m ON rml.liked_member_id = m.member_id  -- 여기를 수정했습니다
+    member m ON rml.liked_member_id = m.member_id
     GROUP BY
     rml.restaurant_id, AgeGroup
   ),
@@ -53,7 +53,8 @@ $sql = "WITH RankedRestaurants AS (
   JOIN
   menu m ON ml.menu_id = m.menu_id
   GROUP BY
-  tr.AgeGroup, r.restaurant_name, tr.like_count";
+  tr.AgeGroup, r.restaurant_name, tr.like_count
+  ORDER BY tr.like_count DESC";
 
   $stmt = $mysqli->query($sql);
 
