@@ -307,7 +307,8 @@ if (!isset($_SESSION['memberId'])) {
 
         // 네 번째 열: comment
         var commentTd = $('<td>');
-        var summaryText = row.comment.substring(0, 40) + '...'; // 처음 50자만 표시
+        var commentText = row.comment || '-';
+        var summaryText = commentText.length > 40 ? commentText.substring(0, 40) + '...' : commentText;
         var fullTextSpan = $('<span>')
             .addClass('text-primary comment-text')
             .css('cursor', 'pointer')
@@ -316,8 +317,8 @@ if (!isset($_SESSION['memberId'])) {
             .text(summaryText)
             .on('click', function() {
               var reviewId = row.reviewId;
-                $('#modalBodyText').text(row.comment); // 모달의 본문을 전체 텍스트로 설정
-                $('#editTextArea').val(row.comment);
+                $('#modalBodyText').text(commentText); // 모달의 본문을 전체 텍스트로 설정
+                $('#editTextArea').val(commentText);
                 $('#saveButton').data('reviewId', reviewId);
             });
         commentTd.append(fullTextSpan);
