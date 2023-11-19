@@ -178,7 +178,7 @@ if (!isset($_SESSION['memberId'])) {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Short Report <span>| Casual Atmosphere </span></h5>
-                <p>Casual restaurants with higher prices show the lowest average rating, indicating customers have some expectations for the atmosphere of the restaurant as the price is high.</p>
+                <p>Expensive casual restaurants show the lowest average rating, indicating customers have some expectations for the atmosphere of the restaurant as the price is high.</p>
                 <p>Affordable casual restaurants receive higher ratings, suggesting that a friendly atmosphere combined with reasonable prices correlates positively with customer satisfaction.</p>
             </div>
           </div>
