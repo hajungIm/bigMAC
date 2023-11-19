@@ -212,7 +212,7 @@ if (!isset($_SESSION['memberId'])) {
         <div class="col-lg-6">
           <div class="card" style="padding-bottom: 10px;">
             <div class="card-body">
-              <h5 class="card-title" style="padding-bottom: 35px;">Results <span>| Restaurant Count by Avenue</span></h5>
+              <h5 class="card-title" style="padding-bottom: 35px;">Results <span>| Restaurant Distribution by Avenue</span></h5>
               <div class="col-lg-12">
                 <div class="container" id="container"></div>
               </div>
