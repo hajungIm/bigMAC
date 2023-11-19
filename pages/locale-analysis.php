@@ -198,7 +198,7 @@ if (!isset($_SESSION['memberId'])) {
 
   <main id="main" class="main">
     <div class="pagetitle">
-      <h1>Locale-Centric Analysis of Restaurant Count</h1>
+      <h1>Locale-Centric Analysis of Restaurant Proportion</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item">Restaurant Analysis </li>
