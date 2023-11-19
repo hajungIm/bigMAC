@@ -170,16 +170,16 @@ if (!isset($_SESSION['memberId'])) {
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Short Report <span>| Upscale Atmosphere </span></h5>
-                <p>Expensive upscale restaurants maintain a moderate rating, showing that customers are generally satisfied with their ambiance even though prices are high.</p>           
-                <p>Affordable upscale restaurants boast a significantly higher average rating, highlighting that lower prices with high-end ambiance guarantee high customer satisfaction.</p>
+                <p><b>Expensive upscale restaurants</b> maintain a moderate rating, showing that customers are generally satisfied with their ambiance even though prices are high.</p>           
+                <p><b>Affordable upscale restaurants</b> boast a significantly higher average rating, highlighting that lower prices with high-end ambiance guarantee high customer satisfaction.</p>
             </div>
           </div>
 
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Short Report <span>| Casual Atmosphere </span></h5>
-                <p>Expensive casual restaurants show the lowest average rating, indicating customers have some expectations for the atmosphere of the restaurant as the price is high.</p>
-                <p>Affordable casual restaurants receive higher ratings, suggesting that a friendly atmosphere combined with reasonable prices correlates positively with customer satisfaction.</p>
+                <p><b>Expensive casual restaurants</b> show the lowest average rating, indicating customers have some expectations for the atmosphere of the restaurant as the price is high.</p>
+                <p><b>Affordable casual restaurants</b> receive higher ratings, suggesting that a friendly atmosphere combined with reasonable prices correlates positively with customer satisfaction.</p>
             </div>
           </div>
 
