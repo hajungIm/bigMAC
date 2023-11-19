@@ -3,7 +3,7 @@ session_start();
 
 // 로그인 상태 확인
 if (!isset($_SESSION['memberId'])) {
-    // 로그인되지 않았다면 로그인 페이지로 리디렉션
+    // 로그인되지 않았다면 로그인 페이지로 리디렉션 
     header('Location: ../pages/login.php');
     exit();
 }
@@ -222,10 +222,17 @@ if (!isset($_SESSION['memberId'])) {
         <div class="col-lg-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Short Report <span>| </span></h5>
-              <!-- 분석 추가 -->
+                <h5 class="card-title">Short Report <span>| The highest proportion </span></h5>
+                <p>Flatbush Avenue occupies the highest proportion in the overall restaurant distribution. This demonstrates that Flatbush Avenue, always a bustling commercial district, has a vibrant dining culture, making it a hotspot that attracts a variety of people.</p>
             </div>
-          </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Short Report <span>| The lowest proportion</span></h5>
+                <p>Bedford Avenue occupies the lowest proportion in the overall restaurant distribution. This could be interpreted as other commercial activities being more active in Bedford Avenue, or businesses other than restaurants being more preferred due to the characteristics of Bedford Avenue.</p>
+            </div>
+        </div>
         </div>
       </div>
     </section>
