@@ -298,7 +298,10 @@ if (!isset($_SESSION['memberId'])) {
               <h5 class="card-title">Short Report <span>| Teenagers</span></h5>
 
               <p>
-                This is Teenagers Report Content ...
+                Based on the analysis, it is observed that teenagers exhibit a preference for restaurants with <b>lower price ranges</b>.
+                This trend suggests a sensitivity to <b>budget constraints</b> typically associated with this age group.
+                Furthermore, the data indicates a notable inclination towards <b>dessert and fast food</b> establishments among teenagers.
+                These preferences could be attributed to the appeal of quick, convenient, and enjoyable food options that resonate with the lifestyle and tastes of the younger demographic.
               </p>
 
             </div>
@@ -311,7 +314,10 @@ if (!isset($_SESSION['memberId'])) {
               <h5 class="card-title">Short Report <span>| Young Adults</span></h5>
 
               <p>
-                This is Young Adults Report Content ...
+                In the young adult age group, they tend to prefer restaurants in the <b>intermediate price range</b>.
+                This preference may reflect a balance between budget considerations and a willingness to spend more on quality dining experiences.
+                Additionally, the report highlights a distinct preference among young adults for <b>lighter food options</b>, such as sushi and poke.
+                This trend suggests an inclination towards <b>healthier, fresher, and possibly more diverse culinary choices</b>.
               </p>
 
             </div>
@@ -324,7 +330,10 @@ if (!isset($_SESSION['memberId'])) {
               <h5 class="card-title">Short Report <span>| Middle Aged</span></h5>
 
               <p>
-                This is Middle Aged Report Content ...
+                The analysis reveals that individuals in the middle-aged group show a preference for not just <b>intermediate</b> but also <b>higher-priced</b> dining options.
+                This trend might be indicative of greater <b>financial stability</b> in this demographic.
+                Additionally, the data suggests that middle-aged individuals often <b>enjoy dining out with their family</b>.
+                The wider price range might also reflect a desire for diverse dining experiences that cater to the tastes of both adults and children.
               </p>
 
             </div>
