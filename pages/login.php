@@ -92,12 +92,6 @@ if (isset($_SESSION['login_error'])) {
                       <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
-                      <!-- 로그인 실패시 <?php
-                      if (isset($loginError) && !empty($loginError)) {
-                        echo '<div class="alert alert-danger">' . $loginError . '</div>';
-                    }
-                      ?> -->
-                    <!--  <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>  -->
                     </div>
                   </form>
                 </div>
