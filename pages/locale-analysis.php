@@ -223,14 +223,14 @@ if (!isset($_SESSION['memberId'])) {
           <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Short Report <span>| The highest proportion </span></h5>
-                <p>Flatbush Avenue occupies the highest proportion in the overall restaurant distribution. This demonstrates that Flatbush Avenue, always a bustling commercial district, has a vibrant dining culture, making it a hotspot that attracts a variety of people.</p>
+                <p><b>Flatbush Avenue</b> occupies the highest proportion in the overall restaurant distribution. This demonstrates that Flatbush Avenue, always a bustling commercial district, has a vibrant dining culture, making it a hotspot that attracts a variety of people.</p>
             </div>
         </div>
 
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Short Report <span>| The lowest proportion</span></h5>
-                <p>Bedford Avenue occupies the lowest proportion in the overall restaurant distribution. This could be interpreted as other commercial activities being more active in Bedford Avenue, or businesses other than restaurants being more preferred due to the characteristics of Bedford Avenue.</p>
+                <p><b>Bedford Avenue</b> occupies the lowest proportion in the overall restaurant distribution. This could be interpreted as other commercial activities being more active in Bedford Avenue, or businesses other than restaurants being more preferred due to the characteristics of Bedford Avenue.</p>
             </div>
         </div>
         </div>
