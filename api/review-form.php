@@ -64,5 +64,4 @@
       }
       echo json_encode($restaurants);
   }
-  $conn->close();
 ?>
