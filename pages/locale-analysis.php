@@ -266,11 +266,14 @@ if (!isset($_SESSION['memberId'])) {
       url: '../api/locale-analysis.php',
       dataType: 'json',
       success: function(data) {
+        var totalCount = data[data.length - 1].restaurant_count;
+        data.pop();
+
         data.forEach(function(item, index) {
           if (item.avenue !=  null) {
             var graphId = 'graph' + (index + 1);
-            var barHeight = (item.restaurant_count / 13) * 100;
-            var graphHtml = '<div class="graph-container" id="' + graphId + '"><div class="graph"><div class="bar" style="height: ' + barHeight + '%;"></div><div class="count">' + item.restaurant_count + '</div></div><div class="avenue">' + item.avenue + '</div></div>';
+            var barHeight = (item.restaurant_count / totalCount) * 300;
+            var graphHtml = '<div class="graph-container" id="' + graphId + '"><div class="graph"><div class="bar" style="height: ' + barHeight + '%;"></div><div class="count">' + item.restaurant_count/totalCount + '</div></div><div class="avenue">' + item.avenue + '</div></div>';
             $('#container').append(graphHtml);
           }
         });
